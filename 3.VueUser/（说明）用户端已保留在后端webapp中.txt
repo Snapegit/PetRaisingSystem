@@ -1,0 +1,9 @@
+用户端为纯静态网页（jQuery+layui），已完整保留在后端 src/main/webapp/front/ 目录中，随 war 包一起部署，由 Tomcat 直接托管，无需单独启动任何前端服务。
+
+使用方法：
+1. 先导入 4.MysqlDatabase 中的数据库脚本，并确认 1.JavaSSM/src/main/resources/config.properties 中数据库密码与本机一致
+2. 后端为 SSM war 项目：IDEA 配置 Tomcat 部署，或 mvn package 后将 target/ssmvwq50.war 放入 Tomcat9 的 webapps 目录启动
+   （部署后若 webapps/ssmvwq50 下无 front 目录，将 src/main/webapp/front 复制到 webapps/ssmvwq50/ 下即可，静态文件无需重启）
+3. 浏览器访问用户端：http://localhost:8080/ssmvwq50/front/index.html
+4. 管理端：http://localhost:8080/ssmvwq50/admin/dist/index.html（开发者模式运行见 2.VueAdmin）
+   （若修改过 Tomcat 端口，请同步修改地址中的端口）
